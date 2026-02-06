@@ -104,7 +104,6 @@ window-rule {
     open-floating true
 }
 
-
 window-rule {
     geometry-corner-radius 20
     clip-to-geometry true
@@ -116,12 +115,14 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an launcher rofi" { spawn "rofi" "-show" "drun"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "--screenshots" "--clock" "--indicator" "--effect-blur" "7x5" "--effect-vignette" "0.5:0.5" "--ring-color" "a9b1d6ff" "--key-hl-color" "bb9af7ff" "--text-color" "a9b1d6ff"; }
+    Super+Alt+L hotkey-overlay-title="Lock the screen: Hyprlock" { spawn "hyprlock"; }
     Mod+Z hotkey-overlay-title="Open the browser: zen-browser" { spawn "zen-browser"; }
     Mod+Shift+F { fullscreen-window; }
     Mod+P { spawn "~/.config/scripts/repos.sh"; }
     Mod+S { spawn "~/.config/scripts/tmux.sh"; }
     Mod+B { spawn "~/.config/scripts/bookmarks.sh"; }
+    Mod+W { spawn "~/.config/scripts/wifi.sh"; }
+    Mod+Shift+Q { spawn "~/.config/scripts/powermenu.sh"; }
     
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
@@ -250,8 +251,6 @@ binds {
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    Mod+W { toggle-column-tabbed-display; }
-
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
@@ -287,3 +286,4 @@ layer-rule {
 spawn-at-startup "waybar"
 spawn-at-startup "wpaperd"
 spawn-at-startup "dunst"
+spawn-at-startup "hypridle"
