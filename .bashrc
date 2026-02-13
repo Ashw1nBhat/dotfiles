@@ -10,7 +10,7 @@
 alias ls='eza -lao --no-user --icons=always --group-directories-first'
 alias config='/usr/bin/git --git-dir=/home/ash/.cfg/ --work-tree /home/ash'
 alias grep='grep --color=auto'
-alias "cd .."='..' 
+alias ..='cd ..' 
 
 PS1="\[\033[38;2;166;227;161m\]\u\[\033[0m\]@\
 \[\033[38;2;137;180;250m\]\h\[\033[0m\]:\
